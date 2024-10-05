@@ -1,11 +1,34 @@
+import { RouterProvider, createBrowserRouter} from 'react-router-dom';
+import { Home, Landing, Register, Login, Error, Dashboard } from './pages';
 
-function App() {
+const router = createBrowserRouter([
+  {
+    path:'/',
+    element: <Home />,
+    errorElement: <Error />,
+    children: [
+      {
+        index: true,
+        element: <Landing />,
+      },
+      {
+        path: 'register',
+        element: <Register />,
+      },
+      {
+        path: 'login',
+        element: <Login />,
+      },
+      {
+        path: 'dashboard',
+        element: <Dashboard />,
+      },
+    ],
+  },
+]);
 
-  return (
-    <>
-      <h1> EverRead</h1>
-    </>
-  )
+const App = () => {
+  return <RouterProvider router={router}/>
 }
 
-export default App
+export default App;
