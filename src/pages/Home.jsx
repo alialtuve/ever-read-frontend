@@ -1,7 +1,11 @@
+import { Outlet } from 'react-router-dom';
 
 const Home = () => {
   return (
-    <div>Home</div>
+    <div>
+      <nav> navbar </nav>
+      <Outlet />
+    </div>
   )
 }
 

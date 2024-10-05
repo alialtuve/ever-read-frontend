@@ -1,0 +1,138 @@
+/*****************   GLOBAL STYLING ****************************/
+ *,
+::after,
+::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 100%; 
+}
+
+:root {
+
+  --background-color-01: #F5E7F4;
+  --background-color-02: #FFFFFF;
+
+
+  --register-light: #00FFFF;
+  --register-dark: #09c7c7;
+
+  --cancel-light: #9ba2ac;
+  --cancel-dark: #49525f;
+
+  --create-light: #72d612;
+  --create-dark: #48af00;
+
+  --delete-light: #e3201b;
+  --delete-dark: #b8100e;
+
+  --warning-light: #f8e64a;
+  --warning-dark:#f0cc0c; 
+    
+  --text-color-01: #222222;
+  --text-color-02: #1c3835;
+  --text-color-03: #fdffef;
+
+  --letter-spacing-01: 0.75px;
+  --small-text: 0.875rem;
+  --extra-small-text: 0.7em;
+
+  --border-radius: 0.25rem;
+  --letter-spacing: 1px;
+  --transition: 0.3s ease-in-out all;
+  --max-width: 1120px;
+  --fixed-width: 600px;
+  --fluid-width: 90vw;
+  --nav-height: 6rem;
+  
+  --shadow-1: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+  --shadow-2: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+    0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  --shadow-3: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+    0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  --shadow-4: 0 20px 25px -5px rgba(0, 0, 0, 0.1),
+    0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+
+body {
+  background: var(--background-color-01);
+  color: var(--text-color-01);
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+    Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-weight: 400;
+  line-height: 1;
+}
+
+h1,
+h2,
+h3 {
+  margin: 0;
+  font-weight: 400;
+  line-height: 1;
+  letter-spacing: var(--letter-spacing-01);
+}
+
+p {
+  margin: 0;
+}
+
+h1 {
+  font-size: clamp(1.5rem, 3vw, 3rem);
+}
+
+h2 {
+  font-size: clamp(1.25rem, 2.5vw, 2.5rem);
+}
+
+h3 {
+  font-size: calmp(1rem, 2vw, 2rem);
+}
+
+.container {
+  width: var(--fluid-width);
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+.text {
+  margin-bottom: 1.5rem;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.img {
+  width: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+.btn {
+  cursor: pointer;
+  color: var(--text-color-02);
+  background: var(--register-dark);
+  border: transparent;
+  border-radius: var(--border-radius);
+  letter-spacing: var(--letter-spacing);
+  padding: 0.375rem 0.75rem;
+  box-shadow: var(--shadow-1);
+  transition: var(--transition);
+  text-transform: capitalize;
+  display: inline-block;
+}
+
+.btn:hover {
+  background: var(--register-light);
+  box-shadow: var(--shadow-3);
+}
+
