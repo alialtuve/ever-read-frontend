@@ -1,9 +1,14 @@
 import logo from '../assets/images/logo-v2.png';
+import logoForm from '../assets/images/logo-form.svg';
 
-const Logo = () => {
+export const Logo = () => {
   return (
       <img src={logo} alt='ever read' className='logo' />
   )
 }
 
-export default Logo;
+export const LogoForm = () => {
+  return (
+      <img src={logoForm} alt='ever read' className='logo' />
+  )
+}
