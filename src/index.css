@@ -37,10 +37,12 @@ html {
   --text-color-03: #fdffef;
 
   --letter-spacing-01: 0.75px;
+  --medium-text: 1rem;
   --small-text: 0.875rem;
   --extra-small-text: 0.7em;
 
   --border-radius: 0.25rem;
+  --border-formrow: #cbd5e1;
   --letter-spacing: 1px;
   --transition: 0.3s ease-in-out all;
   --max-width: 1120px;
@@ -56,7 +58,6 @@ html {
   --shadow-4: 0 20px 25px -5px rgba(0, 0, 0, 0.1),
     0 10px 10px -5px rgba(0, 0, 0, 0.04);
 }
-
 
 body {
   background: var(--background-color-01);
@@ -117,6 +118,8 @@ ul {
   object-fit: cover;
 }
 
+/* ==================== Buttom Styles ======================= */
+
 .btn {
   cursor: pointer;
   color: var(--text-color-02);
@@ -134,5 +137,46 @@ ul {
 .btn:hover {
   background: var(--register-light);
   box-shadow: var(--shadow-3);
+}
+
+.btn-block {
+  width: 100%;
+}
+
+ /* ==================== Form Styles ======================= */
+.form {
+  width: 90vw;
+  max-width: var(--fixed-width);
+  background: var(--background-color-02);
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow-2);
+  padding: 2rem 2.5rem;
+  margin: 3rem auto;
+}
+
+.form-label {
+  display: block;
+  font-size: var(--medium-text);
+  margin-bottom: 0.175rem;
+  text-transform: capitalize;
+  letter-spacing: var(--letter-spacing);
+  line-height: 1.5;
+}
+
+.form-input,
+.form-textarea,
+.form-select {
+  width: 100%;
+  padding: 0.375rem 0.75rem;
+  margin-bottom: 0.95rem;
+  border-radius: var(--border-radius);
+  background: var(--background-color-01);
+  border: 1px solid var(--border-formrow);
+  color: var(--text-color);
+}
+.form-input,
+.form-select,
+.form-btn {
+  height: 35px;
 }
 
