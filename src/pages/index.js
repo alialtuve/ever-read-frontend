@@ -10,3 +10,4 @@ export { default as EditBook } from './EditBook';
 export { default as DeleteBook } from './DeleteBook';
 export { default as GetBook } from './GetBook';
 export { default as ReturnBook } from './ReturnBook';
+export { default as Profile } from './Profile';
