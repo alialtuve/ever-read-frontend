@@ -1,5 +1,7 @@
 import { RouterProvider, createBrowserRouter} from 'react-router-dom';
-import { Home, Landing, Register, Login, Error, Dashboard } from './pages';
+import {  Home, Landing, Register, Login,
+          Error, Dashboard, AddBook, AllBooks,
+          ReturnBook, Profile, GetBook } from './pages';
 
 const router = createBrowserRouter([
   {
@@ -22,6 +24,28 @@ const router = createBrowserRouter([
       {
         path: 'dashboard',
         element: <Dashboard />,
+        children: [
+          {
+            index:true,
+            element: <AllBooks />
+          },
+          {
+            path: 'add-book',
+            element: <AddBook />
+          },
+          {
+            path: 'return-book',
+            element: <ReturnBook />
+          },
+          {
+            path: 'get-book',
+            element: <GetBook />
+          },
+          {
+            path: 'profile',
+            element: <Profile />
+          }
+        ]
       },
     ],
   },
