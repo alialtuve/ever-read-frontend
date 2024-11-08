@@ -1,12 +1,18 @@
-import { Outlet } from 'react-router-dom';
+import { Outlet, redirect, useLoaderData } from 'react-router-dom';
 import Wrapper from '../assets/wrappers/DashboardWrapper';
 import { Navbar, SmallSideBar, BigSideBar } from '../components';
 import { createContext, useContext, useState } from 'react';
 
+export const loader = () => {
+  return 'hello world';
+}
+
 const DashboardContext = createContext();
 
 const Dashboard = () => {
-  const user = {name:'usuario'}
+  const data = useLoaderData();
+  console.log(data);
+  
   
   const [showSidebar, setShowSidebar] = useState(false);
   
@@ -22,7 +28,7 @@ const Dashboard = () => {
   return (
     <DashboardContext.Provider
       value={{
-        user,
+        
         showSidebar,
         toggleSidebar,
         logoutUser
