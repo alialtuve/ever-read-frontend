@@ -1,11 +1,14 @@
 import { RouterProvider, createBrowserRouter} from 'react-router-dom';
 import {  Home, Landing, Register, Login,
           Error, Dashboard, AddBook, AllBooks,
-          ReturnBook, Profile, GetBook } from './pages';
+          ReturnBook, Profile, GetBook, 
+          EditBook} from './pages';
 
 import { action as registerAction } from './pages/Register';
 import { action as loginAction } from './pages/Login';
 import { loader as dashboardLoader } from './pages/Dashboard';
+import { action as addBookAction } from './pages/AddBook';
+import { loader as booksLoader } from './pages/AllBooks';
 
 const router = createBrowserRouter([
   {
@@ -34,11 +37,13 @@ const router = createBrowserRouter([
         children: [
           {
             index:true,
-            element: <AllBooks />
+            element: <AllBooks />,
+            loader: booksLoader,
           },
           {
             path: 'add-book',
-            element: <AddBook />
+            element: <AddBook />,
+            action: addBookAction
           },
           {
             path: 'return-book',
@@ -51,6 +56,13 @@ const router = createBrowserRouter([
           {
             path: 'profile',
             element: <Profile />
+          },
+          {
+            path: 'edit-book/:id',
+            element: <EditBook />
+          },
+          {
+            path: 'delete-book/:id',
           }
         ]
       },

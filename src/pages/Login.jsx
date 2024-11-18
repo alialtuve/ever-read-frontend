@@ -35,7 +35,7 @@ const Login = () => {
           type='password'
           name='password'
         />
-        <button type='submit' className='btn btn-block' disabled={isLogginIn}>
+        <button type='submit' className='btn btn-block btn-register' disabled={isLogginIn}>
           {isLogginIn? 'logging in...' : 'login'}
         </button>
         <p>

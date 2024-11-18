@@ -44,7 +44,7 @@ const Register = () => {
           type='password'
           name='password'
         />
-        <button type="submit" className="btn btn-block" disabled={isSending} >
+        <button type="submit" className="btn btn-block btn-register" disabled={isSending} >
           {isSending? 'Signing up...' : 'Sign up'}
         </button>
         <p>
