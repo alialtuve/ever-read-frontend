@@ -11,7 +11,7 @@ const LogOut = () => {
     <Wrapper>
       <button
         type='button'
-        className='btn logout-btn'
+        className='btn btn-register logout-btn'
         onClick={() => setShowLogout(!showLogout)}
       >
         <FaUserCircle />

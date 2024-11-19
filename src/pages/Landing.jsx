@@ -18,10 +18,10 @@ const Landing = () => {
             Just dare and enjoy. Wherever you are, wherever you go.
             Register or login if you already are.
           </p>
-          <Link to='/register' className='btn register-link'>
+          <Link to='/register' className='btn btn-register register-link'>
             Register
           </Link>
-          <Link to='/login' className='btn'>
+          <Link to='/login' className='btn btn-register'>
             Login
           </Link>
         </div>
