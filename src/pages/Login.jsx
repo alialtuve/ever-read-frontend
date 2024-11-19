@@ -1,11 +1,30 @@
-import { Link } from 'react-router-dom';
+import { Link, Form, redirect, useNavigation } from 'react-router-dom';
 import Wrapper from '../assets/wrappers/RegisterLoginWrapper';
 import { LogoForm, FormTemplate} from '../components';
+import  urlFetch from '../utils/urlFetch';
+import { toast } from 'react-toastify';
+
+export const action = async({request}) => {
+  const formData = await request.formData();
+  const data = Object.fromEntries(formData);
+  
+   try{
+    await urlFetch.post('/auth/login', data);
+    toast.success('Login successfull');
+    return redirect('/dashboard');
+   }catch (error){
+      toast.error(error?.response?.data?.msg);
+     return error;
+   }
+}
 
 const Login = () => {
+  const navigation = useNavigation();
+  const isLogginIn = navigation.state === 'loggingin';
+
   return (
     <Wrapper>
-      <form className='form'>
+      <Form method='post' className='form'>
         <LogoForm />
         <h2> Login </h2>
         <FormTemplate
@@ -16,20 +35,15 @@ const Login = () => {
           type='password'
           name='password'
         />
-        <button type='submit' className='btn btn-block'>
-          Login
-        </button>
-
-        <button type='button' className='btn btn-block'>
-           Explore the App
+        <button type='submit' className='btn btn-block btn-register' disabled={isLogginIn}>
+          {isLogginIn? 'logging in...' : 'login'}
         </button>
         <p>
-          
           <Link to='/register' className='login-btn'>
             Register now
           </Link>
         </p>
-      </form>
+      </Form>
     </Wrapper>
   )
 }

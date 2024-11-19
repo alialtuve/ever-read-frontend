@@ -15,7 +15,7 @@ html {
 
   --background-color-01: #F5E7F4;
   --background-color-02: #FFFFFF;
-
+  --background-color-03: #cfc8c8;
 
   --register-light: #00FFFF;
   --register-dark: #09c7c7;
@@ -26,11 +26,11 @@ html {
   --create-light: #72d612;
   --create-dark: #48af00;
 
-  --delete-light: #e3201b;
-  --delete-dark: #b8100e;
+  --delete-light: #f7443e;
+  --delete-dark: #c72609;
 
   --warning-light: #f8e64a;
-  --warning-dark:#f0cc0c; 
+  --warning-dark:#d8c309; 
     
   --text-color-01: #222222;
   --text-color-02: #1c3835;
@@ -71,11 +71,14 @@ body {
 
 h1,
 h2,
-h3 {
+h3,
+h4,
+h5 {
   margin: 0;
   font-weight: 400;
   line-height: 1;
   letter-spacing: var(--letter-spacing-01);
+  text-transform: capitalize;
 }
 
 p {
@@ -91,7 +94,11 @@ h2 {
 }
 
 h3 {
-  font-size: calmp(1rem, 2vw, 2rem);
+  font-size: clamp(1rem, 2vw, 2rem);
+}
+
+h4 {
+  font-size: clamp(0.75rem, 1.75vw, 1.75rem);
 }
 
 .container {
@@ -124,7 +131,6 @@ ul {
 .btn {
   cursor: pointer;
   color: var(--text-color-02);
-  background: var(--register-dark);
   border: transparent;
   border-radius: var(--border-radius);
   letter-spacing: var(--letter-spacing);
@@ -135,13 +141,43 @@ ul {
   display: inline-block;
 }
 
-.btn:hover {
+
+.btn-block {
+  width: 100%;
+}
+
+.btn-register {
+  background: var(--register-dark);
+}
+.btn-register:hover {
   background: var(--register-light);
   box-shadow: var(--shadow-3);
 }
 
-.btn-block {
-  width: 100%;
+ .btn-save {
+  background: var(--create-dark);
+ }
+ .btn-save:hover {
+  background: var(--create-light);
+  box-shadow: var(--shadow-3);
+}
+
+.btn-edit {
+  background: var(--warning-dark);
+  color: var(--text-color-03);
+ }
+ .btn-edit:hover {
+  background: var(--warning-light);
+  box-shadow: var(--shadow-3);
+}
+
+.btn-delete {
+  background: var(--delete-dark);
+  color: var(--text-color-03);
+ }
+ .btn-delete:hover {
+  background: var(--delete-light);
+  box-shadow: var(--shadow-3);
 }
 
  /* ==================== Form Styles ======================= */
