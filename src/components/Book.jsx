@@ -20,11 +20,11 @@ const Book = ({ _id, title, published, stock, author, genre}) => {
             <BookInfo  name='Published' text={published}/>
             <BookInfo  name='Stock' text={stock}/>
           <footer className="actions">
-            <Link  to={`../edit-book/${_id}`} className="btn btn-edit" > 
+            <Link  to={`/dashboard/edit-book/${_id}`} className="btn btn-edit" > 
                 <FaEdit className="icon" /> 
                  Edit
             </Link>
-            <Form method="post" action={`../delete-job/${_id}`}>
+            <Form method="post" action={`/dashboard/delete-book/${_id}`}>
               <button type="submit" className="btn btn-delete">
                 <FaTrash className="icon"/>
                 Delete
