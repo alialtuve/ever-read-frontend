@@ -61,20 +61,20 @@ const AddBook = () => {
               name='title' 
               id='title' 
             />
+            <FormSelect 
+              name='author'
+              list={authors}
+            />
             <FormTemplate 
               type='text'
               name='published'
               id='published'
             />
             <FormTemplate
-               type='text'
+               type='number'
                name='stock'
                id='stock'
              />
-            <FormSelect 
-              name='author'
-              list={authors}
-            />
             <FormSelect 
               name='genre'
               list={genres}
