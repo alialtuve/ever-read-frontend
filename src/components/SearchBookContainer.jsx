@@ -1,4 +1,4 @@
-import { Form, Link, useSubmit, useNavigate } from 'react-router-dom';
+import { Form, useSubmit, useNavigate } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import Wrapper from "../assets/wrappers/DashboardFormWrapper";
 import FormSelect from "./FormSelect";
@@ -12,25 +12,22 @@ const SearchBookContainer = () => {
   const {searchValues}  = useAllBooksContext();
   const { writer, title } = searchValues;
   const [authors, setAuthors] = useState([]);  
-  //const [ title, setTitle ] = useState(searchValues.title);
-
-  const getAuthors = async() => {
-    try {
-      const { data } = await urlFetch.get('/author');
-      const authors = data.authors; 
-      setAuthors([{_id:'00', name:'All'}, ...authors]);
-    } catch (error) {
-      console.log(error);
-    }
-  } 
+   
   
   useEffect(()=> {
+    const getAuthors = async() => {
+      try {
+        const { data } = await urlFetch.get('/author');
+        const authors = data.authors; 
+        setAuthors([{_id:'00', name:'All'}, ...authors]);
+      } catch (error) {
+        console.log(error);
+      }
+    }
     getAuthors();
   },[]);
 
   const cleanFields = () => {
-    //getAuthors();
-    //setTitle('');
     navigate('/dashboard')
   }
 
