@@ -10,7 +10,7 @@ const FormSelect = ({ name, labelText, list, defaultValue='', onChange }) => {
         id={name}
         name={name}
         className='form-select'
-        defaultValue={ defaultValue }
+        defaultValue={ defaultValue || '' }
         onChange={onChange}
         required
         >
@@ -20,7 +20,6 @@ const FormSelect = ({ name, labelText, list, defaultValue='', onChange }) => {
                 <option 
                   key={item._id} 
                   value={item._id} 
-                  selected={(item.name === defaultValue)? true : false}
                 >
                   {item.name}
                 </option>

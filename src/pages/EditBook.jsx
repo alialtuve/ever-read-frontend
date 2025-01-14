@@ -33,8 +33,8 @@ const EditBook = () => {
   const { genre, author } = book;
   const isSaving = navigation.state === 'saving';
   
-  const [authors, setAuthors] = useState([]);
-  const [genres, setGenres] = useState([]);
+  const [authors, setAuthors] = useState([book.author]);
+  const [genres, setGenres] = useState([book.genre]);
   
 
   useEffect(()=> {
