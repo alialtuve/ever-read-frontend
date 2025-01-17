@@ -1,9 +1,12 @@
 import Book from './Book';
 import { useAllBooksContext } from "../pages/AllBooks";
 import Wrapper from '../assets/wrappers/BookContainerWrapper';
+import PaginationContainer from './PaginationContainer';
 
 const BooksContainer = () => {
-  const {books} = useAllBooksContext();
+  const {data} = useAllBooksContext();
+  const {books, total, numOfPages} = data;
+
   if(books.length === 0) {
     return (
       <Wrapper>
@@ -15,6 +18,7 @@ const BooksContainer = () => {
   }
   return(
     <Wrapper>
+      <h4 style={{marginBottom: '25px'}}> {total} book{books.length > 1 && 's'} found </h4>
       <div className='books'> 
         {
           books.map((book) => {
@@ -22,6 +26,7 @@ const BooksContainer = () => {
           })
         }
       </div>
+      { numOfPages > 1 && <PaginationContainer /> }
     </Wrapper>
   )
 }
