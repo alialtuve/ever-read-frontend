@@ -4,10 +4,16 @@ import { toast } from 'react-toastify';
 import { BooksContainer, SearchContainer } from '../components';
 import { useContext, createContext} from 'react';
 
-export const loader = async() => {
+export const loader = async({ request }) => {
+
+  const params = Object.fromEntries([
+    ...new URL(request.url).searchParams.entries(),
+  ])
+
+  
   try {
-    const {data} = await urlFetch.get('/book');
-    return data;
+    const {data} = await urlFetch.get('/book', { params});
+    return {data, searchValues: {...params}};
   } catch (error) {
     toast.error(error?.response?.data?.msg);
     return error;
@@ -17,10 +23,11 @@ export const loader = async() => {
 const AllBooksContext = createContext();
 
 const AllBooks = () => {
-  const {books} = useLoaderData();
+  
+  const {data, searchValues} = useLoaderData();
   
   return (
-     <AllBooksContext.Provider value={{ books }}>
+     <AllBooksContext.Provider value={{ data, searchValues }}>
          <SearchContainer />
          <BooksContainer />
      </AllBooksContext.Provider>

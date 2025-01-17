@@ -1,5 +1,5 @@
 
-const FormTemplate = ({ type, name, labelText, defaultValue }) => {
+const FormTemplate = ({ type, name, defaultValue, labelText, onChange }) => {
   return (
     <div className="form-template">
       <label htmlFor={name} className="form-label">
@@ -9,8 +9,9 @@ const FormTemplate = ({ type, name, labelText, defaultValue }) => {
         type={type}
         id={name}
         name={name}
-        className="form-input"
         defaultValue={defaultValue || ''}
+        className="form-input"
+        onChange={onChange}
         required
       />
     </div>
