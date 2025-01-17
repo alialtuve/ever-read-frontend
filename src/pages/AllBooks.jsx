@@ -25,10 +25,9 @@ const AllBooksContext = createContext();
 const AllBooks = () => {
   
   const {data, searchValues} = useLoaderData();
-  const {books} = data;
   
   return (
-     <AllBooksContext.Provider value={{ books, searchValues }}>
+     <AllBooksContext.Provider value={{ data, searchValues }}>
          <SearchContainer />
          <BooksContainer />
      </AllBooksContext.Provider>
