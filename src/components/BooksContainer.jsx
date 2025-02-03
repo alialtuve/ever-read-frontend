@@ -2,10 +2,13 @@ import Book from './Book';
 import { useAllBooksContext } from "../pages/AllBooks";
 import Wrapper from '../assets/wrappers/BookContainerWrapper';
 import PaginationContainer from './PaginationContainer';
+import { useOutletContext } from 'react-router-dom';
 
 const BooksContainer = () => {
   const {data} = useAllBooksContext();
+  const { user } = useOutletContext();
   const {books, total, numOfPages} = data;
+  const userId = user._id;    
 
   if(books.length === 0) {
     return (
@@ -22,7 +25,7 @@ const BooksContainer = () => {
       <div className='books'> 
         {
           books.map((book) => {
-            return <Book key={book._id} {...book} />
+            return <Book key={book._id} {...book} user={userId}/>
           })
         }
       </div>

@@ -7,7 +7,7 @@ const Wrapper = styled.div`
   grid-template-rows: 1fr auto;
   box-shadow: var(--shadow-2);
   header {
-    padding: 1rem 1.5rem;
+    padding: 1rem 1rem;
     border-bottom: 1px solid var(--background-color-03);
     display: grid;
     grid-template-columns: auto 1fr;
@@ -25,6 +25,8 @@ const Wrapper = styled.div`
   }
 
   .info {
+    display: inline-block;
+    margin-bottom: 0;
     h5 {
       margin-bottom: 0.5rem;
       font-size: larger;
@@ -38,6 +40,7 @@ const Wrapper = styled.div`
     }
   }
 
+ 
   .content {
     padding: 0.5rem 0.5rem;
     margin-left: 0.5rem;
@@ -60,14 +63,16 @@ const Wrapper = styled.div`
     align-items: center;
   }
   .btn-edit,
-  .btn-delete {
+  .btn-delete,
+  .btn-getBook {
     height: 30px;
     font-size: 0.85rem;
     display: flex;
     align-items: center;
   }
-  .btn-edit {
-    margin-right: 1.5rem;
+  .btn-edit,
+  .btn-getBook {
+    margin-right: 1.05rem;
   }
   .icon {
     margin-right: 0.5rem;
