@@ -180,6 +180,15 @@ ul {
   box-shadow: var(--shadow-3);
 }
 
+.btn-getBook {
+  background: var(--register-dark);
+  color: var(--text-color-03);
+ }
+ .btn-getBook:hover {
+  background: var(--register-light);
+  box-shadow: var(--shadow-3);
+}
+
  /* ==================== Form Styles ======================= */
 .form {
   width: 90vw;
