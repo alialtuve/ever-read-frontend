@@ -6,3 +6,5 @@ export { default as SmallSideBar } from './SmallSideBar.jsx';
 export { default as FormSelect } from './FormSelect.jsx';
 export { default as BooksContainer } from './BooksContainer.jsx';
 export { default as SearchContainer } from './SearchBookContainer.jsx';
+export { default as LendsContainer } from './LendsContainer.jsx';
+export { default as SearchLendsContainer } from './SearchLendsContainer.jsx';

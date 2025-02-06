@@ -14,8 +14,8 @@ const links = [
     icon: <FaBook /> 
   },
   { 
-    text: 'return book', 
-    path: 'return-book', 
+    text: 'lended books', 
+    path: 'lended-books', 
     icon: <FaFolderOpen /> 
   },
   { 
