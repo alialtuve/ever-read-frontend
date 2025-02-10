@@ -7,5 +7,5 @@ export { default as Error } from './Error';
 export { default as AllBooks } from './AllBooks';
 export { default as AddBook } from './AddBook';
 export { default as EditBook } from './EditBook';
-export { default as ReturnBook } from './ReturnBook';
+export { default as LendedBooks } from './LendedBooks';
 export { default as Profile } from './Profile';

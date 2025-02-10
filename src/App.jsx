@@ -1,7 +1,7 @@
 import { RouterProvider, createBrowserRouter} from 'react-router-dom';
 import {  Home, Landing, Register, Login,
           Error, Dashboard, AddBook, AllBooks,
-          ReturnBook, Profile,
+          LendedBooks, Profile,
           EditBook } from './pages';
 
 import { action as registerAction } from './pages/Register';
@@ -13,6 +13,8 @@ import { loader as editBookLoader } from './pages/EditBook';
 import { action as deleteBookAction } from './pages/DeleteBook';
 import { action as editBookAction} from './pages/EditBook';
 import { action as getBookAction } from './pages/GetBook';
+import { loader as lendedBooks } from './pages/LendedBooks'
+import { action as returnBookAction } from './pages/ReturnBook'
 
 const router = createBrowserRouter([
   {
@@ -50,8 +52,13 @@ const router = createBrowserRouter([
             action: addBookAction
           },
           {
-            path: 'return-book',
-            element: <ReturnBook />
+            path: 'lended-books',
+            element: <LendedBooks />,
+            loader: lendedBooks,
+          },
+          {
+            path: 'return-book/:id',
+            action: returnBookAction
           },
           {
             path: 'get-book/:book/:user',
