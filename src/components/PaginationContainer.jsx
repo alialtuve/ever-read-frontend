@@ -1,12 +1,11 @@
 import { FaAngleDoubleRight, FaAngleDoubleLeft} from 'react-icons/fa';
 import Wrapper from '../assets/wrappers/PaginationWrapper';
 import { useLocation, useNavigate } from 'react-router-dom';
-import { useAllBooksContext } from '../pages/AllBooks';
 
-function PaginationContainer() {
-  const {
-    data: {numOfPages, currentPage},
-  } = useAllBooksContext();
+
+function PaginationContainer({ numOfPages, currentPage}) {
+  console.log('numOfPages', numOfPages);
+  console.log('currentPage', currentPage);
   
   const { search, pathname } = useLocation();
   const navigate = useNavigate();
