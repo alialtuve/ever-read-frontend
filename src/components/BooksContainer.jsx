@@ -6,8 +6,9 @@ import { useOutletContext } from 'react-router-dom';
 
 const BooksContainer = () => {
   const {data} = useAllBooksContext();
+  
   const { user } = useOutletContext();
-  const {books, total, numOfPages} = data;
+  const {books, total, numOfPages, currentPage} = data;
   const userId = user._id;    
 
   if(books.length === 0) {
@@ -29,7 +30,7 @@ const BooksContainer = () => {
           })
         }
       </div>
-      { numOfPages > 1 && <PaginationContainer /> }
+      { numOfPages > 1 && <PaginationContainer numOfPages={numOfPages} currentPage={currentPage} /> }
     </Wrapper>
   )
 }

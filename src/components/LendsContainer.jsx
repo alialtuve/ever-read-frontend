@@ -1,11 +1,13 @@
 import { useLendsContext } from '../pages/LendedBooks';
 import Wrapper from '../assets/wrappers/LendsWrapper';
 import Lends from './Lends';
+import PaginationContainer from './PaginationContainer';
 
 const LendsContainer = () => {
 
-  const {lend} = useLendsContext();
-
+  const { data } = useLendsContext();
+  const {lend, total, numOfPages, currentPage} = data;
+  
   if(lend.length === 0){
     return (
       <Wrapper>
@@ -16,7 +18,7 @@ const LendsContainer = () => {
   
   return (
     <Wrapper>
-      <h4 style={{marginTop: '25px', marginBottom:'25px'}}> Lended Books</h4>
+      <h4 style={{marginTop: '25px', marginBottom:'25px'}}> Lended Books </h4>
       <header>
         <p>title</p>
         <p>author</p>
@@ -30,6 +32,7 @@ const LendsContainer = () => {
              return < Lends key={lend._id} lend={lend} />
           })}
       </div>
+      {numOfPages > 1 && <PaginationContainer numOfPages={numOfPages} currentPage={currentPage} />}
     </Wrapper>
   )
 }
