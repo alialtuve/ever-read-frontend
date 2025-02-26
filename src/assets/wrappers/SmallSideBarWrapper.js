@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 const Wrapper = styled.aside `
-  @media (min-width: 992px){
+  @media (min-width: 990px){
     display: none;
   }
   .sidebar-container {
@@ -23,8 +23,8 @@ const Wrapper = styled.aside `
   }
   .content {
     background: var(--background-color-02);
-    width: var(--fluid-width);
-    height: 90vh;
+    width: var(--fluid-width2);
+    height: 85vh;
     border-radius: var(--border-radius);
     padding: 4rem 2rem;
     position: relative;
