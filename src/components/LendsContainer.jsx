@@ -23,8 +23,8 @@ const LendsContainer = () => {
         <p>title</p>
         <p>author</p>
         <p>reader</p>
-        <p>email</p>
-        <p>date</p>
+        <p className='hide'>email</p>
+        <p className='hide'>date</p>
         <p style={{width:'100px'}}>action</p>
       </header>
       <div className='lends'>
