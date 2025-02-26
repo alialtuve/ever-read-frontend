@@ -4,9 +4,7 @@ import { useLocation, useNavigate } from 'react-router-dom';
 
 
 function PaginationContainer({ numOfPages, currentPage}) {
-  console.log('numOfPages', numOfPages);
-  console.log('currentPage', currentPage);
-  
+    
   const { search, pathname } = useLocation();
   const navigate = useNavigate();
 

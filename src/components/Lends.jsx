@@ -14,8 +14,8 @@ function Lends({lend}) {
             <span className='info'> {book.title} </span>
             <span className='info'> {author.name}  </span>
             <span className='info'> {`${user.name} ${user.lastName}`} </span>
-            <span className='info'> {user.email} </span>
-            <span className='info'> {date} </span>
+            <span className='info hide'> {user.email} </span>
+            <span className='info hide'> {date} </span>
             <span className='info' style={{width:'125px'}}> 
               <Form method='post' action={`../return-book/${_id}`}>
                 <button className='btn btn-edit'>

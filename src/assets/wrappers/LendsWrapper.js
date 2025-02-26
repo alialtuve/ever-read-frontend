@@ -1,6 +1,13 @@
 import styled from 'styled-components';
 
 const Wrapper = styled.div`
+    @media screen and (min-width: 450px) and (max-width: 770px ) {
+      grid-template-columns: auto 1fr;
+      .hide {
+        overflow: hidden;
+        display: none;
+      }
+    }
   header {
     background-color: var(--background-color-02);
     color: var(--text-color-04);
@@ -24,13 +31,9 @@ const Wrapper = styled.div`
     grid-template-columns: 1fr;
     row-gap: 1rem;
     max-width: 1500px;
+    
   }
-  @media (min-width: 1120px) {
-    .lends {
-      grid-template-columns: 1fr 1fr;
-      gap: 1rem;
-    }
-  }  
+    
   
   .content {
     border: 1px solid var(--background-color-03);
